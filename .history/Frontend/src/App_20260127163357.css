@@ -37,7 +37,7 @@
 
 
 .signup-btn {
-  background-color:rgb(56, 103, 203);
+  background-color: #2563eb;
   border: none;
   color: #ffffff;
   padding: 6px 14px;
@@ -45,7 +45,7 @@
   border-radius: 6px;
 }
 .footer {
-  background-color: #0f172a;
+  background-color:rgb(9, 16, 49);
   color: #cbd5f5;
   padding: 40px 20px 20px;
   margin-top: 60px;
@@ -103,39 +103,4 @@
   margin-top: 30px;
   font-size: 13px;
   color: #94a3b8;
-}
-/* Expense Form UI */
-
-.expense-form {
-  max-width: 400px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.expense-input {
-  padding: 10px 12px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid #cbd5f5;
-}
-
-.expense-input:focus {
-  outline: none;
-  border-color: #2563eb;
-}
-
-.expense-btn {
-  background-color: #2563eb;
-  color: #ffffff;
-  border: none;
-  padding: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.expense-btn:hover {
-  background-color: #1d4ed8;
 }
