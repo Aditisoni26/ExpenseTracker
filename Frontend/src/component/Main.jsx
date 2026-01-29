@@ -3,7 +3,7 @@ import React from "react";
 export default function Main() {
   return (
     <main className="main-content">
-      <h2>Add Expense</h2>
+      <h2>Add Expense+</h2>
 
       <form className="expense-form">
         <input
