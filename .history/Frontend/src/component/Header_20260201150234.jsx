@@ -4,11 +4,12 @@ import React from "react";
 export default function Header() {
   return (
     <header className="header">
+      <nav className="header-center">
       <div className="header-left">
         <span className="logo">ExpenseTracker</span>
       </div>
 
-      <nav className="header-center">
+      
         <NavLink to="/" className="nav-link">
           Dashboard
         </NavLink>

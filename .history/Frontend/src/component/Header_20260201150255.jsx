@@ -8,7 +8,7 @@ export default function Header() {
         <span className="logo">ExpenseTracker</span>
       </div>
 
-      <nav className="header-center">
+      
         <NavLink to="/" className="nav-link">
           Dashboard
         </NavLink>

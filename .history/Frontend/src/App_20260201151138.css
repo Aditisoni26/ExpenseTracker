@@ -256,7 +256,7 @@ body {
 
 .login-title {
   margin-bottom: 6px;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 700;
   color: #0f172a;
 }
@@ -264,7 +264,7 @@ body {
 .login-subtitle {
   font-size: 14px;
   color: #64748b;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .login-form {
@@ -311,7 +311,7 @@ body {
 
 .login-footer-text {
   margin-top: 20px;
-  font-size: 15px;
+  font-size: 13px;
   color: #64748b;
   text-align: center;
 }
@@ -320,7 +320,6 @@ body {
   color: #2563eb;
   cursor: pointer;
   font-weight: 500;
-  
 }
 .login-link {
   color: #2563eb;

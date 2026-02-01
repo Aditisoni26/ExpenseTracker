@@ -1,0 +1,151 @@
+.header {
+  height: 64px;
+  background-color: #0f172a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header-center {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #cbd5f5;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  font-size:16px;
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+
+.signup-btn {
+  background-color:rgb(56, 103, 203);
+  border: none;
+  color: #ffffff;
+  padding: 6px 14px;
+  cursor: pointer;
+  text-decoration:none;
+  border-radius: 6px;
+}
+.footer {
+  background-color: #0f172a;
+  color: #cbd5f5;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  min-width: 200px;
+}
+
+.footer-title {
+  margin: 0;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.footer-desc {
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.footer-list li:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+/* Expense Form UI */
+
+.expense-form {
+  max-width: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.expense-input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+}
+
+.expense-input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.expense-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.expense-btn:hover {
+  background-color: #1d4ed8;
+}
+.nav-link.active {
+  text-decoration:none;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+.nav-link{
+  text-decoration:none;
+}

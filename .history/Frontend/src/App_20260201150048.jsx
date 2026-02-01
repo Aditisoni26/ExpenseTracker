@@ -4,19 +4,15 @@ import Footer from "./component/Footer";
 import Header from "./component/Header";
 import Main from "./component/Main";
 import Login from "./component/Login";
-import Signup from "./component/Signup";
 
 function App() {
   return (
     <div className="app">
-      <Header />
-      <main className="content">
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </main>
+     <Header />
+    <Routes>
+      <Route path="/"  element={<Main/>}/>
+      <Route path="/login"  element={<Login/>}/>
+      </Routes>
       <Footer />
     </div>
   );

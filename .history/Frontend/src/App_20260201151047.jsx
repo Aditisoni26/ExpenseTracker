@@ -4,7 +4,6 @@ import Footer from "./component/Footer";
 import Header from "./component/Header";
 import Main from "./component/Main";
 import Login from "./component/Login";
-import Signup from "./component/Signup";
 
 function App() {
   return (
