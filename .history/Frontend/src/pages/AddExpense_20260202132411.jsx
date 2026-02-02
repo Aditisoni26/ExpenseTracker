@@ -1,14 +1,15 @@
 import React from "react";
+import "../App.css";
 
-export default function Main() {
+export default function AddExpense() {
   return (
-    <main className="main-content">
-      <h2>Add Expens</h2>
+    <div className="page">
+      <h1 className="page-title">Add Expense</h1>
 
       <form className="expense-form">
         <input
           type="text"
-          placeholder="Expense name"
+          placeholder="Expense Name"
           className="expense-input"
         />
 
@@ -18,10 +19,15 @@ export default function Main() {
           className="expense-input"
         />
 
-        <button type="submit" className="expense-btn">
+        <input
+          type="date"
+          className="expense-input"
+        />
+
+        <button className="expense-btn">
           Add Expense
         </button>
       </form>
-    </main>
+    </div>
   );
 }

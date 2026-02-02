@@ -15,7 +15,7 @@ function App() {
       <main className="content">
         <Routes>
           <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/add-transaction" element={<AddExpense />} />
+          <Route path="/add-expense" element={<AddExpense />} />
           <Route path="/reports" element={<Reports/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

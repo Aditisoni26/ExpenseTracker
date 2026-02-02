@@ -1,0 +1,363 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+  /* Colors */
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --income: #16a34a;
+  --expense: #dc2626;
+
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --border-light: #e5e7eb;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  height: 64px;
+  background: linear-gradient(90deg, #0f172a, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header-center {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5f5;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.25s ease;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.signup-btn {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.signup-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.dashboard-subtitle {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+}
+
+/* =========================
+   LEFT COLUMN
+========================= */
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* =========================
+   BALANCE CARD
+========================= */
+.balance-card {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  padding: 36px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.balance-card::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.balance-card span {
+  font-size: 13px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.balance-card h2 {
+  margin-top: 8px;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+/* =========================
+   MINI STATS
+========================= */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-mini {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-mini span {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stat-mini h3 {
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.stat-mini.income h3 {
+  color: var(--income);
+}
+
+.stat-mini.expense h3 {
+  color: var(--expense);
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.dashboard-right {
+  display: flex;
+}
+
+.dashboard-section {
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.section-body {
+  flex: 1;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-body p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.section-body span {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   FORMS (LOGIN / ADD)
+========================= */
+.form-card {
+  max-width: 420px;
+  margin: auto;
+  background: var(--bg-card);
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+input {
+  padding: 14px;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.primary-btn {
+  width: 100%;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #020617;
+  color: #cbd5f5;
+  padding: 48px 20px 24px;
+}
+
+.footer-bottom {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}

@@ -9,7 +9,7 @@ export default function Header() {
       </div>
 
       <nav className="header-center">
-        <NavLink to="/Dashboard" className="nav-link">
+        <NavLink to="/" className="nav-link">
           Dashboard
         </NavLink>
 

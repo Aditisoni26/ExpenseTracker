@@ -605,14 +605,12 @@ body {
 .reports-title {
   font-size: 32px;
   font-weight: 700;
-  margin-left:4%;
   color: #0f172a;
 }
 
 .reports-subtitle {
   margin-top: 6px;
   font-size: 14px;
-  margin-left:4%;
   color: #64748b;
 }
 
@@ -623,8 +621,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-    margin-left:4%;
-    margin-right:4%;
+    margin-left:2%;
+    margin-left:2%;
 }
 
 /* =========================

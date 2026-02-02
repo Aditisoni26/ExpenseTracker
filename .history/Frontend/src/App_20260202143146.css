@@ -337,7 +337,6 @@ body {
 .dash {
   width: 100%;
   padding: 32px 24px 56px;
-  background-color: #f8fafc;
 }
 
 /* =========================
@@ -350,7 +349,6 @@ body {
 .dash-header h1 {
   font-size: 36px;
   font-weight: 700;
-  color: #0f172a;
 }
 
 .dash-header p {
@@ -366,15 +364,16 @@ body {
   display: grid;
   grid-template-columns: 2fr 1.3fr;
   gap: 32px;
+  align-items: stretch;
 }
 
 /* =========================
-   LEFT: 2x2 CARDS
+   LEFT SIDE: 2 x 2 GRID
 ========================= */
 .dash-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* EXACTLY 2 COLUMNS */
+  grid-template-rows: repeat(2, 1fr);    /* EXACTLY 2 ROWS */
   gap: 24px;
 }
 
@@ -383,9 +382,9 @@ body {
 ========================= */
 .card {
   background: #ffffff;
-  padding: 28px;
+  padding: 26px;
   border-radius: 16px;
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,313 +393,72 @@ body {
 .card span {
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
   color: #64748b;
+  letter-spacing: 0.5px;
 }
 
 .card h2,
 .card h3 {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 26px;
   font-weight: 600;
+}
+
+/* =========================
+   COLOR VARIANTS
+========================= */
+.card.balance h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.card.income h3 {
+  color: #16a34a;
+}
+
+.card.expense h3 {
+  color: #dc2626;
+}
+
+.card.neutral h3 {
   color: #0f172a;
 }
 
 /* =========================
-   BALANCE (SUBTLE ACCENT)
-========================= */
-.card.balance {
-  border-left: 4px solid #2563eb;
-  background: linear-gradient(
-    180deg,
-    #ffffff,
-    #f1f5ff
-  );
-}
-
-.card.balance h2 {
-  font-size: 34px;
-  font-weight: 700;
-}
-
-/* =========================
-   INCOME / EXPENSE / OTHER
-========================= */
-.card.income {
-  border-left: 4px solid blue;
-}
-
-.card.expense {
-  border-left: 4px solid blue;
-}
-
-.card.neutral {
-  border-left: 4px solid blue;
-}
-
-/* =========================
-   RIGHT: RECENT TRANSACTIONS
+   RIGHT SIDE: ACTIVITY
 ========================= */
 .dash-activity {
   background: #ffffff;
   border-radius: 16px;
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
 }
 
 .dash-activity h3 {
   padding: 18px 22px;
+  border-bottom: 1px solid #e5e7eb;
   font-size: 18px;
   font-weight: 600;
-  color: #0f172a;
-  border-bottom: 1px solid #e5e7eb;
 }
 
-/* Empty state */
 .activity-empty {
   flex: 1;
   padding: 48px 24px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .activity-empty p {
   font-size: 16px;
   font-weight: 500;
-  color: #0f172a;
 }
 
 .activity-empty span {
-  display: block;
   margin-top: 6px;
   font-size: 14px;
   color: #64748b;
 }
-
-/* =========================
-   ADD EXPENSE PAGE
-========================= */
-.add-expense-page {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 40px;
-}
-
-/* =========================
-   CARD
-========================= */
-.add-expense-card {
-  width: 100%;
-  max-width: 480px;
-  background: #ffffff;
-  padding: 32px 28px 36px;
-  border-radius: 18px;
-  border: 1px solid #e5e7eb;
-}
-
-/* =========================
-   HEADER
-========================= */
-.add-expense-header {
-  margin-bottom: 28px;
-}
-
-.add-expense-header h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.add-expense-header p {
-  margin-top: 6px;
-  font-size: 14px;
-  color: #64748b;
-}
-
-/* =========================
-   FORM
-========================= */
-.expense-form {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-/* =========================
-   FORM GROUP
-========================= */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-group label {
-  font-size: 13px;
-  font-weight: 500;
-  color: #0f172a;
-}
-
-/* =========================
-   INPUTS
-========================= */
-.form-group input {
-  padding: 12px 14px;
-  font-size: 14px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  background-color: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-group input::placeholder {
-  color: #9ca3af;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* =========================
-   BUTTON
-========================= */
-.primary-btn.full {
-  margin-top: 8px;
-  width: 100%;
-  padding: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 12px;
-  background-color: #2563eb;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.primary-btn.full:hover {
-  background-color: #1d4ed8;
-}
-
-.primary-btn.full:active {
-  transform: translateY(1px);
-}
-/* =========================
-   REPORTS PAGE
-========================= */
-.reports-page {
-  padding-top: 32px;
-}
-
-/* =========================
-   HEADER
-========================= */
-.reports-header {
-  margin-bottom: 32px;
-}
-
-.reports-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-left:4%;
-  color: #0f172a;
-}
-
-.reports-subtitle {
-  margin-top: 6px;
-  font-size: 14px;
-  margin-left:4%;
-  color: #64748b;
-}
-
-/* =========================
-   GRID
-========================= */
-.reports-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-    margin-left:4%;
-    margin-right:4%;
-}
-
-/* =========================
-   CARD
-========================= */
-.report-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 24px 24px 28px;
-
-  border: 1px solid #e5e7eb;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Highlight only ONE card */
-.report-card.highlight {
-  background-color: #eff6ff;
-  border-color: #bfdbfe;
-}
-
-/* =========================
-   CARD HEADER
-========================= */
-.report-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.report-header h3 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* =========================
-   TAG
-========================= */
-.report-tag {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background-color: #2563eb;
-  color: #ffffff;
-}
-
-/* =========================
-   DESCRIPTION
-========================= */
-.report-desc {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.5;
-}
-
-/* =========================
-   PLACEHOLDER
-========================= */
-.report-placeholder {
-  margin-top: auto;
-  padding: 28px 20px;
-  border-radius: 14px;
-  background-color: #f8fafc;
-  text-align: center;
-}
-
-.placeholder-icon {
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.report-placeholder p {
-  font-size: 14px;
-  font-weight: 500;
-  color: #64748b;
-}
-

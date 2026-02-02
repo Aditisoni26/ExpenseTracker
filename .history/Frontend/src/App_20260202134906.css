@@ -332,149 +332,151 @@ body {
   text-decoration: underline;
 }
 /* =========================
-   DASHBOARD BASE
+   COLOR TOKENS
 ========================= */
-.dash {
-  width: 100%;
-  padding: 32px 24px 56px;
-  background-color: #f8fafc;
+:root {
+  --primary: #2563eb;        /* Blue */
+  --primary-soft: #eff6ff;
+  --accent: #16a34a;         /* Green */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-light: #e2e8f0;
 }
 
 /* =========================
-   HEADER
+   PAGE BASE
 ========================= */
-.dash-header {
-  margin-bottom: 32px;
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  background-color: var(--bg-main);
 }
 
-.dash-header h1 {
-  font-size: 36px;
+/* =========================
+   DASHBOARD HEADER
+========================= */
+.dashboard-header {
+  margin-bottom: 40px;
+}
+
+.dashboard-title {
+  font-size: 30px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--text-main);
 }
 
-.dash-header p {
-  margin-top: 6px;
-  font-size: 14px;
-  color: #64748b;
-}
-
-/* =========================
-   MAIN GRID
-========================= */
-.dash-main {
-  display: grid;
-  grid-template-columns: 2fr 1.3fr;
-  gap: 32px;
+.dashboard-subtitle {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--text-muted);
 }
 
 /* =========================
-   LEFT: 2x2 CARDS
+   STATS GRID
 ========================= */
-.dash-cards {
+.dashboard-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin-bottom: 48px;
 }
 
-/* =========================
-   CARD BASE
-========================= */
-.card {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.stat-box {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card span {
+.stat-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.stat-box span {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
-.card h2,
-.card h3 {
+.stat-box h2 {
   margin-top: 10px;
-  font-size: 26px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-/* =========================
-   BALANCE (SUBTLE ACCENT)
-========================= */
-.card.balance {
-  border-left: 4px solid #2563eb;
-  background: linear-gradient(
-    180deg,
-    #ffffff,
-    #f1f5ff
-  );
-}
-
-.card.balance h2 {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
+  color: var(--primary);
+}
+
+/* Highlight first stat */
+.stat-box:first-child {
+  background: var(--primary-soft);
+  border-color: #bfdbfe;
 }
 
 /* =========================
-   INCOME / EXPENSE / OTHER
+   SECTION (RECENT ACTIVITY)
 ========================= */
-.card.income {
-  border-left: 4px solid blue;
-}
-
-.card.expense {
-  border-left: 4px solid blue;
-}
-
-.card.neutral {
-  border-left: 4px solid blue;
-}
-
-/* =========================
-   RIGHT: RECENT TRANSACTIONS
-========================= */
-.dash-activity {
-  background: #ffffff;
+.dashboard-section {
+  background: var(--bg-card);
   border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  display: flex;
-  flex-direction: column;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
 }
 
-.dash-activity h3 {
-  padding: 18px 22px;
-  font-size: 18px;
+.section-header {
+  padding: 18px 24px;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-header h3 {
+  font-size: 17px;
   font-weight: 600;
-  color: #0f172a;
-  border-bottom: 1px solid #e5e7eb;
+  color: var(--text-main);
 }
 
-/* Empty state */
-.activity-empty {
-  flex: 1;
-  padding: 48px 24px;
+.section-body {
+  padding: 40px 24px;
+}
+
+.section-body.empty {
   text-align: center;
 }
 
-.activity-empty p {
+.section-body.empty p {
   font-size: 16px;
   font-weight: 500;
-  color: #0f172a;
+  color: var(--text-main);
 }
 
-.activity-empty span {
+.section-body.empty span {
   display: block;
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 14px;
-  color: #64748b;
+  color: var(--text-muted);
+}
+
+/* =========================
+   OPTIONAL CTA (if you add later)
+========================= */
+.primary-btn {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #1d4ed8;
 }
 
 /* =========================
@@ -484,52 +486,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 40px;
 }
 
-/* =========================
-   CARD
-========================= */
+/* Card container */
 .add-expense-card {
   width: 100%;
   max-width: 480px;
-  background: #ffffff;
-  padding: 32px 28px 36px;
-  border-radius: 18px;
-  border: 1px solid #e5e7eb;
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
 }
 
-/* =========================
-   HEADER
-========================= */
-.add-expense-header {
-  margin-bottom: 28px;
-}
-
+/* Header */
 .add-expense-header h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
-  color: #0f172a;
 }
 
 .add-expense-header p {
   margin-top: 6px;
   font-size: 14px;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
-/* =========================
-   FORM
-========================= */
+/* Form */
 .expense-form {
+  margin-top: 28px;
   display: flex;
   flex-direction: column;
   gap: 22px;
 }
 
-/* =========================
-   FORM GROUP
-========================= */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -539,168 +527,104 @@ body {
 .form-group label {
   font-size: 13px;
   font-weight: 500;
-  color: #0f172a;
+  color: var(--text-main);
 }
 
-/* =========================
-   INPUTS
-========================= */
+/* Inputs reuse global input styles */
 .form-group input {
-  padding: 12px 14px;
-  font-size: 14px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  background-color: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-group input::placeholder {
-  color: #9ca3af;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* =========================
-   BUTTON
-========================= */
-.primary-btn.full {
-  margin-top: 8px;
-  width: 100%;
-  padding: 12px;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 14px;
   border-radius: 12px;
-  background-color: #2563eb;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.primary-btn.full:hover {
-  background-color: #1d4ed8;
-}
-
-.primary-btn.full:active {
-  transform: translateY(1px);
-}
-/* =========================
-   REPORTS PAGE
-========================= */
-.reports-page {
-  padding-top: 32px;
-}
-
-/* =========================
-   HEADER
-========================= */
-.reports-header {
-  margin-bottom: 32px;
-}
-
-.reports-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-left:4%;
-  color: #0f172a;
-}
-
-.reports-subtitle {
-  margin-top: 6px;
   font-size: 14px;
-  margin-left:4%;
-  color: #64748b;
+}
+
+/* Button full width */
+.primary-btn.full {
+  width: 100%;
+  margin-top: 10px;
 }
 
 /* =========================
-   GRID
+   DASHBOARD GRID
 ========================= */
-.reports-grid {
+.dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-    margin-left:4%;
-    margin-right:4%;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
 
 /* =========================
-   CARD
+   LEFT COLUMN
 ========================= */
-.report-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 24px 24px 28px;
-
-  border: 1px solid #e5e7eb;
+.dashboard-left {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-/* Highlight only ONE card */
-.report-card.highlight {
-  background-color: #eff6ff;
-  border-color: #bfdbfe;
+  gap: 24px;
 }
 
 /* =========================
-   CARD HEADER
+   BALANCE CARD
 ========================= */
-.report-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.report-header h3 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* =========================
-   TAG
-========================= */
-.report-tag {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background-color: #2563eb;
+.balance-card {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+}
+
+.balance-card span {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.9;
+}
+
+.balance-card h2 {
+  margin-top: 8px;
+  font-size: 42px;
+  font-weight: 700;
 }
 
 /* =========================
-   DESCRIPTION
+   MINI STATS
 ========================= */
-.report-desc {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.5;
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-mini {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.stat-mini span {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stat-mini h3 {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.stat-mini.income h3 {
+  color: var(--income);
+}
+
+.stat-mini.expense h3 {
+  color: var(--expense);
 }
 
 /* =========================
-   PLACEHOLDER
+   RIGHT COLUMN
 ========================= */
-.report-placeholder {
-  margin-top: auto;
-  padding: 28px 20px;
-  border-radius: 14px;
-  background-color: #f8fafc;
-  text-align: center;
+.dashboard-right .dashboard-section {
+  height: 100%;
 }
-
-.placeholder-icon {
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.report-placeholder p {
-  font-size: 14px;
-  font-weight: 500;
-  color: #64748b;
-}
-

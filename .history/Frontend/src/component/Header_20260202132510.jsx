@@ -13,8 +13,8 @@ export default function Header() {
           Dashboard
         </NavLink>
 
-        <NavLink to="/add-transaction" className="nav-link">
-          Add Transaction
+        <NavLink to="/add-expense" className="nav-link">
+          Add Expense
         </NavLink>
 
         <NavLink to="/reports" className="nav-link">

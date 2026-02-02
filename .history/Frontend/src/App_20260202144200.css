@@ -605,7 +605,7 @@ body {
 .reports-title {
   font-size: 32px;
   font-weight: 700;
-  margin-left:4%;
+  margin-left:5%;
   color: #0f172a;
 }
 
@@ -623,8 +623,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-    margin-left:4%;
-    margin-right:4%;
+    margin-left:2%;
+    margin-right:2%;
 }
 
 /* =========================
