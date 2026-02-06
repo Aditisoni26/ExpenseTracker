@@ -31,7 +31,7 @@ export default function Login() {
 
         <p className="login-footer-text">
           Don’t have an account? <Link to="/signup" className="login-link">
-    Sign up
+    Signup
   </Link>
         </p>
       </div>
