@@ -30,27 +30,19 @@ export default function Signup() {
 
     if (!res.ok) {
       setAlert({
-          type: "error",
-          message: data.message || "Login failed",
-        });
+        type: "error",
+        message: "Please fill in all fields",
+      });
       return;
     }
 
-    setAlert({
-        type: "success",
-        message: "signup successful",
-      });
+    alert("Signup successful");
     navigate("/login");
   };
 
   return (
     <div className="login-page">
       <div className="login-card">
-        <Alert
-                  type={alert.type}
-                  message={alert.message}
-                  onClose={() => setAlert({ type: "", message: "" })}
-                />
         <h2 className="login-title">Sign Up</h2>
 
         <form className="login-form" onSubmit={handleSubmit}>

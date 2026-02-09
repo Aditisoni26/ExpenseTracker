@@ -38,7 +38,7 @@ export default function Signup() {
 
     setAlert({
         type: "success",
-        message: "signup successful",
+        message: "Login successful",
       });
     navigate("/login");
   };
@@ -46,11 +46,6 @@ export default function Signup() {
   return (
     <div className="login-page">
       <div className="login-card">
-        <Alert
-                  type={alert.type}
-                  message={alert.message}
-                  onClose={() => setAlert({ type: "", message: "" })}
-                />
         <h2 className="login-title">Sign Up</h2>
 
         <form className="login-form" onSubmit={handleSubmit}>

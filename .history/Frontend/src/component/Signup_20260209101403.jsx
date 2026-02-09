@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const navigate = useNavigate();
- const [alert, setAlert] = useState({ type: "", message: "" });
+
   const [form, setForm] = useState({
     name: "",
     username: "",
@@ -29,28 +29,17 @@ export default function Signup() {
     const data = await res.json();
 
     if (!res.ok) {
-      setAlert({
-          type: "error",
-          message: data.message || "Login failed",
-        });
+      alert(data.message);
       return;
     }
 
-    setAlert({
-        type: "success",
-        message: "signup successful",
-      });
+    alert("Signup successful");
     navigate("/login");
   };
 
   return (
     <div className="login-page">
       <div className="login-card">
-        <Alert
-                  type={alert.type}
-                  message={alert.message}
-                  onClose={() => setAlert({ type: "", message: "" })}
-                />
         <h2 className="login-title">Sign Up</h2>
 
         <form className="login-form" onSubmit={handleSubmit}>

@@ -1,14 +1,13 @@
+import { NavLink } from "react-router-dom";
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Header() {
-  const navigate = useNavigate();
-  const isLoggedIn = !!localStorage.getItem("token");
+  const isLoggedIn = localStorage.getItem("token");
 
   function logout() {
-    localStorage.removeItem("token");
-    navigate("/login"); // redirect after logout
-  }
+  localStorage.removeItem("token");
+  window.location.reload();
+}
 
   return (
     <header className="header">
@@ -17,7 +16,7 @@ export default function Header() {
       </div>
 
       <nav className="header-center">
-        <NavLink to="/dashboard" className="nav-link">
+        <NavLink to="/Dashboard" className="nav-link">
           Dashboard
         </NavLink>
 
@@ -29,17 +28,11 @@ export default function Header() {
           Reports
         </NavLink>
       </nav>
-
+{isLoggedIn?():()}
       <div className="header-right">
-        {isLoggedIn ? (
-          <button onClick={logout} className="login-btn">
-            Logout
-          </button>
-        ) : (
-          <NavLink to="/login" className="signup-btn">
-            Login
-          </NavLink>
-        )}
+        <NavLink to="/login" className="signup-btn">
+          Login
+        </NavLink>
       </div>
     </header>
   );

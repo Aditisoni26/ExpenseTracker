@@ -61,10 +61,10 @@ export default function Login() {
       setTimeout(() => {
         navigate("/dashboard");
       }, 1000);
-    } catch (err) {
+    } catch (erorr) {
       setAlert({
         type: "error",
-        message:err.message,
+        message: "Server error. Please try again.",
       });
     }
   };

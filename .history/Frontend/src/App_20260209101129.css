@@ -708,6 +708,7 @@ body {
 .alert {
   position: fixed;
   top: 80px; /* below fixed header */
+  right: 20px;
   min-width: 260px;
   padding: 12px 16px;
   border-radius: 6px;

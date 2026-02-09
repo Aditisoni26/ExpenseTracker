@@ -64,7 +64,7 @@ export default function Login() {
     } catch (err) {
       setAlert({
         type: "error",
-        message:err.message,
+        message: "Server error. Please try again.",
       });
     }
   };
