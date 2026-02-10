@@ -1,4 +1,4 @@
-//Reports.jsx
+//Dashboard.jsx
 import React from "react";
 import "../App.css";
 

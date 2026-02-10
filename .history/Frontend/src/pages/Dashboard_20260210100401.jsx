@@ -1,5 +1,4 @@
-//Dashboard.jsx
-import React from "react";
+//import React from "react";
 import "../App.css";
 
 export default function Dashboard() {

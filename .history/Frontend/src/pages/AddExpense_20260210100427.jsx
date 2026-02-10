@@ -1,4 +1,4 @@
-//AddExpenses.jsx
+//AddE.jsx
 import React from "react";
 import "../App.css";
 
