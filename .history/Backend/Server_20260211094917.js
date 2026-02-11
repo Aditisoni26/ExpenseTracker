@@ -13,7 +13,8 @@ app.use("/api/auth", require("./routes/auth.routes"));
 app.use("/api/expenses", require("./routes/expense.routes"));
 
 mongoose.connect(process.env.MONGODB_URL)
-    .then(() => console.log("MongoDB Connected"))
+
+.then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
 
 app.listen(5000, () => console.log("Server running on port 5000"));
