@@ -16,7 +16,7 @@ export default function Dashboard() {
     <div className="dash">
       <div className="dash-header">
         <h1>Dashboard</h1>
-        <p>Manage your income and expenses in one place</p>
+        <p>Manage your income and expenses in one place!</p>
       </div>
 
       <div className="dash-main">
