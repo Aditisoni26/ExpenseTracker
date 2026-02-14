@@ -22,8 +22,7 @@ export function ExpenseProvider({ children }) {
 
   return (
     <ExpenseContext.Provider
-     value={{ expenses, fetchExpenses, addExpense, deleteExpense }}
-
+      value={{ expenses, fetchExpenses, addExpense }}
     >
       {children}
     </ExpenseContext.Provider>

@@ -58,7 +58,23 @@ router.post("/login", async(req, res) => {
             return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        const token = jwt.sign({ userId: user._id },
+        const token = jwt.sign({ import axios from "axios";
+
+const api = axios.create({
+    baseURL: "http://localhost:5000/api",
+});
+
+api.interceptors.request.use((config) => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+});
+
+export default api;: user._id },
             process.env.JWT_SECRET, { expiresIn: "7d" }
         );
 

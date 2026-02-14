@@ -10,30 +10,17 @@ export default function AddExpense() {
     name: "",
     amount: "",
     date: "",
-    category: "",
+      category: "",
   });
 
   const submit = (e) => {
-  e.preventDefault();
-
-  if (!form.name || !form.amount || !form.date || !form.category) {
-    alert("All fields are required");
-    return;
-  }
-
-  addExpense({
-    ...form,
-    amount: Number(form.amount),
-  });
-
-  setForm({
-    name: "",
-    amount: "",
-    date: "",
-    category: ""
-  });
-};
-
+    e.preventDefault();
+    addExpense({
+      ...form,
+      amount: Number(form.amount),
+    });
+    setForm({ name: "", amount: "", date: "" });
+  };
 
   return (
     <div className="page add-expense-page">

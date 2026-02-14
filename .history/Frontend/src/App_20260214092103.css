@@ -738,32 +738,3 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
-/* =========================
-   CATEGORY SELECT BOX
-========================= */
-
-.category-select {
-  padding: 12px 14px;
-  font-size: 14px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  background-color: #ffffff;
-  cursor: pointer;
-  appearance: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Focus effect */
-.category-select:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* Optional custom arrow */
-.category-select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='20' height='20' fill='%2364748b' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5H5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 16px;
-}

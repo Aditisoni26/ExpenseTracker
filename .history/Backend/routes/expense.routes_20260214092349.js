@@ -7,25 +7,20 @@ const router = express.Router();
 /* ADD EXPENSE */
 router.post("/", auth, async(req, res) => {
     try {
-        console.log("BODY:", req.body);
-        console.log("USER ID:", req.userId);
-
         const expense = new Expense({
             userId: req.userId,
             name: req.body.name,
             amount: req.body.amount,
             date: req.body.date,
-            category: req.body.category,
         });
 
         await expense.save();
         res.json(expense);
     } catch (err) {
-        console.error("EXPENSE ERROR:", err);
+        console.error("Expense Error:", err);
         res.status(500).json({ message: err.message });
     }
 });
-
 
 /* GET ALL EXPENSES */
 router.get("/", auth, async(req, res) => {

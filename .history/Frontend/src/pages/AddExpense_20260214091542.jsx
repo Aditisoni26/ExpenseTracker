@@ -10,30 +10,16 @@ export default function AddExpense() {
     name: "",
     amount: "",
     date: "",
-    category: "",
   });
 
   const submit = (e) => {
-  e.preventDefault();
-
-  if (!form.name || !form.amount || !form.date || !form.category) {
-    alert("All fields are required");
-    return;
-  }
-
-  addExpense({
-    ...form,
-    amount: Number(form.amount),
-  });
-
-  setForm({
-    name: "",
-    amount: "",
-    date: "",
-    category: ""
-  });
-};
-
+    e.preventDefault();
+    addExpense({
+      ...form,
+      amount: Number(form.amount),
+    });
+    setForm({ name: "", amount: "", date: "" });
+  };
 
   return (
     <div className="page add-expense-page">
@@ -53,26 +39,20 @@ export default function AddExpense() {
               }
             />
           </div>
-         <div className="form-group">
-  <label>Category</label>
-
-  <select
-    className="category-select"
-    value={form.category}
-    onChange={(e) =>
-      setForm({ ...form, category: e.target.value })
-    }
-  >
-    <option value="">Select Category</option>
-    <option value="Food">Food</option>
-    <option value="Rent">Rent</option>
-    <option value="Travel">Travel</option>
-    <option value="Bills">Bills</option>
-    <option value="Shopping">Shopping</option>
-    <option value="Other">Other</option>
-  </select>
-</div>
-
+          <select
+  value={form.category}
+  onChange={(e) =>
+    setForm({ ...form, category: e.target.value })
+  }
+>
+  <option value="">Select Category</option>
+  <option value="Food">Food</option>
+  <option value="Rent">Rent</option>
+  <option value="Travel">Travel</option>
+  <option value="Bills">Bills</option>
+  <option value="Shopping">Shopping</option>
+  <option value="Other">Other</option>
+</select>
 
 
           <div className="form-group">

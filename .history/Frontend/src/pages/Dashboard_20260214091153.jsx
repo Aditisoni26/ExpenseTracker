@@ -17,7 +17,7 @@ export default function Dashboard() {
     <div className="dash">
       <div className="dash-header">
         <h1>Dashboard</h1>
-        <p>Manage your income and expenses in one place</p>
+        <p>Manage your income and expenses in one place!</p>
       </div>
 
       <div className="dash-main">
@@ -44,26 +44,9 @@ export default function Dashboard() {
           ) : (
             <ul style={{ padding: "20px" }}>
               {expenses.slice(-5).reverse().map((e) => (
-                <li key={e._id} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0" }}>
-  <span>
-    {e.name} - ₹{e.amount}
-  </span>
-
-  <button
-    onClick={() => deleteExpense(e._id)}
-    style={{
-      background: "red",
-      color: "white",
-      border: "none",
-      padding: "4px 8px",
-      borderRadius: "4px",
-      cursor: "pointer"
-    }}
-  >
-    Delete
-  </button>
-</li>
-
+                <li key={e._id}>
+                  {e.name} - ₹{e.amount}
+                </li>
               ))}
             </ul>
           )}

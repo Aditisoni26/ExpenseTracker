@@ -10,30 +10,17 @@ export default function AddExpense() {
     name: "",
     amount: "",
     date: "",
-    category: "",
+      category: "",
   });
 
   const submit = (e) => {
-  e.preventDefault();
-
-  if (!form.name || !form.amount || !form.date || !form.category) {
-    alert("All fields are required");
-    return;
-  }
-
-  addExpense({
-    ...form,
-    amount: Number(form.amount),
-  });
-
-  setForm({
-    name: "",
-    amount: "",
-    date: "",
-    category: ""
-  });
-};
-
+    e.preventDefault();
+    addExpense({
+      ...form,
+      amount: Number(form.amount),
+    });
+    setForm({ name: "", amount: "", date: "" });
+  };
 
   return (
     <div className="page add-expense-page">
@@ -53,25 +40,44 @@ export default function AddExpense() {
               }
             />
           </div>
-         <div className="form-group">
-  <label>Category</label>
+         /* =========================
+   CATEGORY BREAKDOWN
+========================= */
 
-  <select
-    className="category-select"
-    value={form.category}
-    onChange={(e) =>
-      setForm({ ...form, category: e.target.value })
-    }
-  >
-    <option value="">Select Category</option>
-    <option value="Food">Food</option>
-    <option value="Rent">Rent</option>
-    <option value="Travel">Travel</option>
-    <option value="Bills">Bills</option>
-    <option value="Shopping">Shopping</option>
-    <option value="Other">Other</option>
-  </select>
-</div>
+.category-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.category-amount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
 
 
 
