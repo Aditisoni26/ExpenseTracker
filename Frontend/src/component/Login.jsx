@@ -80,7 +80,7 @@ export default function Login() {
 
         <h2 className="login-title">Login</h2>
         <p className="login-subtitle">
-          Welcome back Enter your credentials.
+          Welcome back. Enter your credentials.
         </p>
 
         <form className="login-form" onSubmit={handleSubmit}>
