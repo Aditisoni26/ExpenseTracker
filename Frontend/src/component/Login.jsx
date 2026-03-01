@@ -49,7 +49,7 @@ export default function Login() {
         return;
       }
 
-      // ✅ LOGIN SUCCESS
+      //  LOGIN SUCCESS
       localStorage.setItem("token", data.token);
 
       setAlert({
@@ -57,7 +57,7 @@ export default function Login() {
         message: "Login successful",
       });
 
-      // redirect after short delay (better UX)
+      // redirect after short delay 
       setTimeout(() => {
         navigate("/dashboard");
       }, 1000);
